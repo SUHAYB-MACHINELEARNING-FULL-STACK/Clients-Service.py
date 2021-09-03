@@ -8,7 +8,7 @@ def SignUpAsCustomer(Name,Email,Password):
   Data.write(f"[\nName: {Name}\nEmail: {Email}\nPassword: {Password}\n]")
   CustomersDataDictionary[Email]=[Name,Password]
 def LogInAsCustomer(Email,Password):
-      print(f"Hello {CustomerDataDictionary["Email"][0]}" if sha256(Password)==CustomerDataDictionary[Email][1] else "Email or Password is wrong!!") if Email in CustomersDataDictionary.keys() else print("Email or Password id wrong!!")
+  print(f"Hello {CustomerDataDictionary["Email"][0]}" if sha256(Password)==CustomerDataDictionary[Email][1] else "Email or Password is wrong!!") if Email in CustomersDataDictionary.keys() else print("Email or Password id wrong!!")
 def LogInAsAdmin(Email,Password):
   print(f'Hello My Admin ({AdminDataDictionary["Name"]}) 🙏' if Email==AdminDataDictionary["Email"] and sha256(Password)==AdminDataDictionary["Password"] else "You are not Admin 😡")
 def GiveMeYourData():
