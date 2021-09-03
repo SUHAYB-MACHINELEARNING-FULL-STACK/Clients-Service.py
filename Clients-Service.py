@@ -5,7 +5,7 @@ CustomersDataDictionary={}
 print("Enter 1 for SignUp as Customer\nEnter 2 for LogIn as Customer\nEnter 3 for LogIn as Admin")
 def SignUpAsCustomer(Name,Email,Password):
   Password=sha256(Password)
-  DataFile.write(f"[\nName: {Name}\nEmail: {Email}\nPassword: {Password}\n]")
+  DataFile.write(f"[\nName: {Name}\nEmail: {Email}\nPassword: {Password}\n\n\n]")
   CustomersDataDictionary[Email]=[Name,Password]
 def LogInAsCustomer(Email,Password):
   print(f"Hello {CustomersDataDictionary[Email][0]}" if sha256(Password)==CustomersDataDictionary[Email][1] else "Email or Password is wrong!!") if Email in CustomersDataDictionary.keys() else print("Email or Password is wrong!!")
