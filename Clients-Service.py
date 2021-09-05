@@ -7,10 +7,8 @@ def SignUpAsCustomer(Name,Email,Password):
   Password=sha256(Password)
   DataFile.write(f"[\nName: {Name}\nEmail: {Email}\nPassword: {Password}\n\n\n]")
   CustomersDataDictionary[Email]=[Name,Password]
-def LogInAsCustomer(Email,Password):
-  print(f"Hello {CustomersDataDictionary[Email][0]}" if sha256(Password)==CustomersDataDictionary[Email][1] else "Email or Password is wrong!!") if Email in CustomersDataDictionary.keys() else print("Email or Password is wrong!!")
-def LogInAsAdmin(Email,Password):
-  print(f'Hello My Admin ({AdminDataDictionary["Name"]}) 🙏' if Email==AdminDataDictionary["Email"] and sha256(Password)==AdminDataDictionary["Password"] else "You are not Admin 😡")
+LogInAsCustomer=lambda Email,Password:print(f"Hello {CustomersDataDictionary[Email][0]}" if sha256(Password)==CustomersDataDictionary[Email][1] else "Email or Password is wrong!!") if Email in CustomersDataDictionary.keys() else print("Email or Password is wrong!!")
+LogInAsAdmin=lambda Email,Password:print(f'Hello My Admin ({AdminDataDictionary["Name"]}) 🙏' if Email==AdminDataDictionary["Email"] and sha256(Password)==AdminDataDictionary["Password"] else "You are not Admin 😡")
 def GiveMeYourData():
   Order = input('Enter Service Number: ')
   Name=input('Enter Your Name: ')
